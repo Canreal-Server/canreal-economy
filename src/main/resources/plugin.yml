@@ -1,6 +1,6 @@
-name: Gringotts
-authors: [jasticE, squidicuz, eXeC64, nikosgram]
-website: https://github.com/nikosgram/Gringotts
+name: CanrealEconomy
+authors: [Braydofficial, jasticE, squidicuz, eXeC64, nikosgram]
+website: https://github.com/Canreal-Server/canreal-economy
 
 version: ${version}
 main: org.gestern.gringotts.Gringotts
@@ -44,6 +44,10 @@ commands:
       /gringotts dependencies
       /gringotts denominations
     permission: gringotts.admin
+  getrank:
+    usage: |
+      /getrank
+    permission: canrealeconomy.getrank
 
 permissions:
   gringotts.createvault:

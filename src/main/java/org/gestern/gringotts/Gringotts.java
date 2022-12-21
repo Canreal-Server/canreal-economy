@@ -32,6 +32,7 @@ import org.gestern.gringotts.api.impl.VaultConnector;
 import org.gestern.gringotts.commands.GringottsExecutor;
 import org.gestern.gringotts.commands.MoneyAdminExecutor;
 import org.gestern.gringotts.commands.MoneyExecutor;
+import org.gestern.gringotts.commands.getRankExecutor;
 import org.gestern.gringotts.currency.Denomination;
 import org.gestern.gringotts.data.DAO;
 import org.gestern.gringotts.data.DerbyDAO;
@@ -40,9 +41,7 @@ import org.gestern.gringotts.data.Migration;
 import org.gestern.gringotts.dependency.DependencyProviderImpl;
 import org.gestern.gringotts.dependency.GenericDependency;
 import org.gestern.gringotts.dependency.placeholdersapi.PlaceholderAPIDependency;
-import org.gestern.gringotts.event.AccountListener;
-import org.gestern.gringotts.event.PlayerVaultListener;
-import org.gestern.gringotts.event.VaultCreator;
+import org.gestern.gringotts.event.*;
 
 import java.io.File;
 import java.io.InputStream;
@@ -305,6 +304,7 @@ public class Gringotts extends JavaPlugin {
         registerCommand(new String[]{"balance", "money"}, new MoneyExecutor());
         registerCommand("moneyadmin", new MoneyAdminExecutor());
         registerCommand("gringotts", new GringottsExecutor(this));
+        registerCommand("getrank", new getRankExecutor());
     }
 
     @SuppressWarnings("UnusedReturnValue")
@@ -344,6 +344,8 @@ public class Gringotts extends JavaPlugin {
         manager.registerEvents(new AccountListener(), this);
         manager.registerEvents(new PlayerVaultListener(), this);
         manager.registerEvents(new VaultCreator(), this);
+        manager.registerEvents(new PreventUsage(), this);
+        manager.registerEvents(new KillEntityEvent(), this);
 
         // listeners for other account types are loaded with dependencies
     }
