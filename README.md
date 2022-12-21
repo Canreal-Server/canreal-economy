@@ -1,5 +1,9 @@
-Gringotts
+Canreal Economy - A soft fork of Gringotts
 =========
+## Disclaimer
+This is a soft fork of Gringotts with modifications made to the code to match configurations and features we have implemented into the Canreal Survival PvP Server. We DO NOT provide any support if you try to run the plugin with our modifications on your server. It will probably not work on your server and you'll probably get errors or unexpected behavior.
+If you want to use the economy plugin Gringotts use the repository this repo is based on. Thank you for your understanding! :)
+
 
 Gringotts is an item-based economy plugin for the Spigot Minecraft server platform. Unlike earlier economy plugins, all
 currency value and money transactions are based on actual items in Minecraft, per default emeralds. The goals are to add
